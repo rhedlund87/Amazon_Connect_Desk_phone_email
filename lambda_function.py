@@ -77,6 +77,8 @@ def lambda_handler(event, context):
         print("Users with 'DESK_PHONE' setting:")
         for username in desk_phone_users:
             print(username)
+        # Define the recipient's email address here
+        recipient_address = 'TEST@TEST.COM'
         
         # Send an email notification with the list of users
         send_email(recipient_address, desk_phone_users)
