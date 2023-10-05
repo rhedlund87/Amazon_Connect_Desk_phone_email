@@ -26,5 +26,6 @@ INSTRUCTIONS:\
 16. Select Action after schedule completion as NONE, and under Retry policy and dead-letter queue (DLQ), turn it off, click next
 17. Review and click Create Schedule
 
-Once everything is all set up you will recieve and email with all users who have their CCP / Workspace set to use the DESK_PHONE option emailed to you:
+Once everything is all set up you will recieve and email with all users who have their CCP / Workspace set to use the DESK_PHONE option emailed to you: ![example email](Assest/email_example.PNG)
+
 
