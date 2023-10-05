@@ -11,9 +11,9 @@ INSTRUCTIONS:\
 4.  Edit Line 46 and Repalce YOUR_CONNECT_INSTANCE_ID with your Amazon Connect Instance ID.     [How to find your Connect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html)
 5.  Edit Line 81 Replace recipient@example.com with the receipient address you used on line 16.
 6.  Deploy your Lambda
-7.  Make sure your Lambda has the following Rights:/
-      A. connect:DescribeUser/
-      B. connect:ListUsers/
-      C. ses:SendRawEmail/
+7.  Make sure your Lambda has the following Rights:\
+      A. connect:DescribeUser\
+      B. connect:ListUsers\
+      C. ses:SendRawEmail\
 8.
 
