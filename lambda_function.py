@@ -13,7 +13,7 @@ def send_email(email_address, user_list):
     sender_address = 'sender@example.com'
     
     # Specify the recipient's email address.
-    recipient_address = 'TEST@TEST.COM'
+    recipient_address = 'recipient@example.com'
     
     # The subject line for the email.
     subject = "Users with Desk Phone Setting in Amazon Connect"
@@ -43,8 +43,7 @@ def send_email(email_address, user_list):
         print(f"Email sending failed: {str(e)}")
 
 def lambda_handler(event, context):
-    # Repleace with your COnnect Instance ID
-    instance_id = 'AmazonConnectInstanceID'
+    instance_id = 'cfc25499-8c1b-4773-acf7-b3cd3a24a6ee'
     
     # Get the list of users in the specified Amazon Connect instance
     response = connect_client.list_users(InstanceId=instance_id)
@@ -77,8 +76,9 @@ def lambda_handler(event, context):
         print("Users with 'DESK_PHONE' setting:")
         for username in desk_phone_users:
             print(username)
+            
         # Define the recipient's email address here
-        recipient_address = 'TEST@TEST.COM'
+         recipient_address = 'recipient@example.com'
         
         # Send an email notification with the list of users
         send_email(recipient_address, desk_phone_users)
