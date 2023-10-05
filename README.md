@@ -18,4 +18,13 @@ INSTRUCTIONS:\
 8. Now lets schedule this Lambda to run every X minutes:
 9. Search in the AWS Console for the services [Amazon EventBridge](https://aws.amazon.com/pm/eventbridge/)
 10. Select EventBridge Schedule and click Create Schedule: ![EventBridge Image](Assest/EventBridge.PNG)
+11. Give the Schedule a name, Description, and under schedule pattern select Recurring Schedule. Select the Schedule type as Rate-based Schedule and set the Rate to something like 15 minutes. And set FLexible time window to Off
+12. This means the lambda will run and check for users with the DESK_PHONE settign every 15 minutes, define how often you whish for this lambda to check.
+13. Give a date and time including timezone for when you want this to fist kick off, leave End date and time blank and click next
+14. Select Lambda from the list of templated targets
+15. Scroll down and from the Lambda function list, select the lambda you deployed in step 6. Dont worry about the payload and click next.
+16. Select Action after schedule completion as NONE, and under Retry policy and dead-letter queue (DLQ), turn it off, click next
+17. Review and click Create Schedule
+
+Once everything is all set up you will recieve and email with all users who have their CCP / Workspace set to use the DESK_PHONE option emailed to you:
 
