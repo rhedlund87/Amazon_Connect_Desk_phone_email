@@ -28,4 +28,3 @@ INSTRUCTIONS:
 
 Once everything is all set up you will recieve and email with all users who have their CCP / Workspace set to use the DESK_PHONE option emailed to you:\
 ![example email](Assest/email_example.PNG)
-
