@@ -14,6 +14,7 @@ INSTRUCTIONS:\
 7.  Make sure your Lambda has the following Rights:\
       A. connect:DescribeUser\
       B. connect:ListUsers\
-      C. ses:SendRawEmail\
-8.
+      C. ses:SendRawEmail
+8. Now lets schedule this Lambda to run every X minutes:
+9. Search in the AWS Console for the services [Amazon EventBridge](https://aws.amazon.com/pm/eventbridge/) 
 
