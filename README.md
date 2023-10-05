@@ -13,7 +13,7 @@ But if using out of the box CCP or workspace this is not an option.\
 <h5>Instructions to setup Lambda function:</h5>
 
 1.  Copy the code from lambda_function.py into a python 3.11 Lambda function you create in the AWS console
-2.  **NOTE:** lines 8 and 9 reference us-east-1 if you are not working in that region please updat those to the needed region
+2.  **NOTE:** lines 8 and 9 reference us-east-1 if you are not working in that region please update those to the needed region
 3.  Edit Line 13 and replace sender@example.com with your SES sender email address
 4.  Edit Line 16 and replace recipient@example.com with the recipient address you desire.
 5.  Edit Line 46 and replace YOUR_CONNECT_INSTANCE_ID with your Amazon Connect Instance ID.     [How to find your Connect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html)
