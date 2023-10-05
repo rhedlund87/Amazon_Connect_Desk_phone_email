@@ -8,4 +8,8 @@ INSTRUCTIONS:\
 1.  Copy the code from lambda_function.py into a python 3.11 Lambda function you create in the AWS console
 2.  Edit Line 13 and Replace sender@example.com with your SES sender email address
 3.  Edit Line 16 and Replace recipient@example.com with the receipient address you desire.
-4.  Edit Line 46 and Repalce YOUR_CONNECT_INSTANCE_ID with your Amazon COnnect Instance ID.     [How to find your Connect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html)
+4.  Edit Line 46 and Repalce YOUR_CONNECT_INSTANCE_ID with your Amazon Connect Instance ID.     [How to find your Connect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html)
+5.  Edit Line 81 Replace recipient@example.com with the receipient address you used on line 16.
+6.  Deploy your Lambda
+7.  Make sure your Lambda has the following Rights: 1. connect:DescribeUser 2. connect:ListUsers 3. ses:SendRawEmail
+
