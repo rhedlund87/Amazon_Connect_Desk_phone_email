@@ -17,5 +17,5 @@ INSTRUCTIONS:\
       C. ses:SendRawEmail
 8. Now lets schedule this Lambda to run every X minutes:
 9. Search in the AWS Console for the services [Amazon EventBridge](https://aws.amazon.com/pm/eventbridge/)
-10. ![EventBridge Image](Assest/EventBridge.PNG)
+10. Select EventBridge Schedule and click Create Schedule: ![EventBridge Image](Assest/EventBridge.PNG)
 
