@@ -5,10 +5,10 @@ In Amazon Connect, agents have the option to receive calls via SOFT_PHONE or DES
 This solution walks you through how to automatically send an email alert when users are using the DESK_PHONE setting in Amazon Connect CCP or workspace.
 
 This example provides a Python 3.11 Lambda Function that will look at all users in Connect to find which users have their CCP set to DESK_PHONE and send an email with that user list.\
-This option can be disabled in a custom CCP by settign the following:\
+This option can be disabled in a custom CCP by settign the following:
 
 enablePhoneTypeSettings: false\
-But if using out of the box CCP or workspace this is not an option.\
+But if using out of the box CCP or workspace this is not an option.
 
 <h5>Instructions to setup Lambda function:</h5>
 
