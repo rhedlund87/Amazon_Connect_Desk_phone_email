@@ -23,9 +23,8 @@ But if using out of the box CCP or workspace this is not an option.
       A. connect:DescribeUser\
       B. connect:ListUsers\
       C. ses:SendRawEmail
-														
-																										  
-																									   
+
+								   
 																																																								   
 																																						 
 																																 

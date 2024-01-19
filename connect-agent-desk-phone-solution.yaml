@@ -1,0 +1,103 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'AWS Desk Phone Solution'
+
+#######################
+# Parameters
+#######################
+Parameters:
+  SolutionSourceBucket:
+    Type: String
+    Description: Source Bucket Name
+  SenderEmail:
+    Type: String
+    Description: Sender Email Address
+  RecieptEmail:
+    Type: String
+    Description: Sender Recipient Email Address
+  ConnectInstanceId:
+    Type: String
+    Description: ConnectInstanceId
+
+#######################
+# Globals
+#######################
+Globals:
+  Function:
+    Runtime: python3.11
+    MemorySize: 128
+
+#######################
+# RESOURCES
+#######################
+Resources:
+
+#######################
+# Lambda IAM Role
+#######################
+  ConnectDeskPhoneIAMRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      RoleName : !Sub '${AWS::StackName}-Role'
+      Policies:
+        - PolicyName: logs
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'logs:CreateLogGroup'
+                  - 'logs:CreateLogStream'
+                  - 'logs:PutLogEvents'
+                Resource: 'arn:aws:logs:*:*:*'
+        - PolicyName: connect
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'connect:DescribeUser'
+                  - 'connect:ListUsers'
+                Resource: 
+                  - !Sub 'arn:aws:connect:${AWS::Region}:${AWS::AccountId}:instance/${ConnectInstanceId}'
+                  - !Sub 'arn:aws:connect:${AWS::Region}:${AWS::AccountId}:instance/${ConnectInstanceId}/*'
+        - PolicyName: ses
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'ses:SendRawEmail'
+                Resource: '*'
+      Path: /
+      ManagedPolicyArns: 
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+#######################
+# Lambda Function
+#######################
+  ConnectDeskPhoneLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-Lambda'
+      Handler: index.lambda_handler
+      Timeout: 100
+      CodeUri: 
+        Bucket: !Ref SolutionSourceBucket
+        Key: index.zip
+      Description: ConnectDeskPhoneLambda
+      Role: !GetAtt ConnectDeskPhoneIAMRole.Arn
+      Environment:
+        Variables:
+          SenderEmail: !Ref SenderEmail
+          RecieptEmail: !Ref RecieptEmail
+          ConnectInstanceId: !Ref ConnectInstanceId

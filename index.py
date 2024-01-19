@@ -3,17 +3,19 @@ import logging
 from botocore.exceptions import ClientError
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
 
 # AWS services
-connect_client = boto3.client('connect', region_name='us-east-1')
-ses_client = boto3.client('ses', region_name='us-east-1')
+region = os.environ['AWS_REGION']
+connect_client = boto3.client('connect', region_name=region)
+ses_client = boto3.client('ses', region_name=region)
 
 def send_email(email_address, user_list):
     # Replace sender@example.com with your SES sender email address.
-    sender_address = 'sender@example.com'
+    sender_address = os.environ['SenderEmail']
     
     # Specify the recipient's email address.
-    recipient_address = 'recipient@example.com'
+    recipient_address = os.environ['RecieptEmail']
     
     # The subject line for the email.
     subject = "Users with Desk Phone Setting in Amazon Connect"
@@ -43,7 +45,7 @@ def send_email(email_address, user_list):
         print(f"Email sending failed: {str(e)}")
 
 def lambda_handler(event, context):
-    instance_id = 'YOUR_CONNECT_INSTANCE_ID'
+    instance_id = os.environ['ConnectInstanceId']
     
     # Get the list of users in the specified Amazon Connect instance
     response = connect_client.list_users(InstanceId=instance_id)
@@ -78,8 +80,8 @@ def lambda_handler(event, context):
             print(username)
             
         # Define the recipient's email address here
-         recipient_address = 'recipient@example.com'
-        
+        recipient_address = os.environ['RecieptEmail']
+
         # Send an email notification with the list of users
         send_email(recipient_address, desk_phone_users)
     else:
