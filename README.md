@@ -11,62 +11,11 @@ enablePhoneTypeSettings: false\
 But if using out of the box CCP or workspace this is not an option.
 
 <h5>Instructions to setup Lambda function via CloudFormation template:</h5>
-1. Set Up S3 Bucket:
 
-Log in to the AWS console.
-Navigate to the S3 service.
-2. Create a New Bucket:
-
-In the upper right-hand corner, click on "Create Bucket."
-Provide a unique name for the bucket.
-Scroll down and click "Create Bucket."
-3. Download and Upload Python Script:
-
-Download the index.py file.
-Zip the index.py file.
-Upload the zipped file to the S3 bucket created in the previous step.
-4. Download CloudFormation Template:
-
-Download the connect-agent-desk-phone-solution.yaml file.
-5. Set Up CloudFormation Stack:
-
-Navigate to the AWS console and go to the CloudFormation service.
-Click on "Create stack" in the upper left-hand corner.
-6. Choose Template File:
-
-Select "With new resources (standard)."
-Choose "Upload a Template."
-Select the YAML file downloaded in the previous step.
-Click "Next."
-7. Configure Stack Details:
-
-Provide a stack name.
-Fill out the required parameters:
-Connect Instance ID (Refer to how to find your Connect Instance ID).
-Receipt Email.
-Sender Recipient Email Address.
-Sender Email Address.
-Solution Source Bucket.
-8. Continue Configuration:
-
-Click "Next."
-Leave stack options as default and click "Next."
-9. Review and Acknowledge:
-
-Review the settings.
-Acknowledge the following:
-"I acknowledge that AWS CloudFormation might create IAM resources."
-"I acknowledge that AWS CloudFormation might create IAM resources with custom names."
-"I acknowledge that AWS CloudFormation might require the following capability: CAPABILITY_AUTO_EXPAND."
-10. Submit and Monitor:
-
-After acknowledging, click "Submit."
-Monitor the CloudFormation process until it completes successfully.
-11. Locate Lambda Resources:
-
-Once CloudFormation is successful, go to the "Resources" tab to locate your Lambda functions.
-Congratulations! You have successfully deployed AWS resources using CloudFormation.
-
+1. Login to the AWS console and navigate to the [S3 service](https://aws.amazon.com/s3/) and click Create bucket in the upper right hand corner
+2. Provide a Unique name of the bucket then scroll down adn clikc Create bucket
+3. Download [index.py script](index.py)
+   
 								   
 																																																								   
 																																						 
