@@ -23,14 +23,28 @@ But if using out of the box CCP or workspace this is not an option.
 9. Click Next
 10. Provide a stack name
 11. Fill out the parameters \
-    	1. Connect Instance ID  [How to locate your Amazon COnnect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) \
-        2. RecieptEmail (Sender Recipient Email Address) \
-        3. SenderEmail (Sender Email Address) \
-        4. SolutionSourceBucket (bukcet name provided in Step 2 above) \
-![Stack Details Image](Assest/stackDetails.png)
+    	a. Connect Instance ID  [How to locate your Amazon COnnect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) \
+        b. RecieptEmail (Sender Recipient Email Address) \
+        c. SenderEmail (Sender Email Address) \
+        d. SolutionSourceBucket (bukcet name provided in Step 2 above) \
+![Stack Details Image](Assest/stackDetails.png)   
+
+12. Click Next
+13. Leave stack options default and click Next
+14. Review settings and Acknowledge the following \
+        a. I acknowledge that AWS CloudFormation might create IAM resources. \
+        b. I acknowledge that AWS CloudFormation might create IAM resources with custom names. \
+        c. I acknowledge that AWS CloudFormation might require the following capability: CAPABILITY_AUTO_EXPAND \
+    
+![CF ACK Image](Assest/CF_ACK.png)   
+
+15. After Acknowledging click submit
+16. After the CLoudFormation completes sucesfully click on the resources tab to locate your Lamba’s name:   ![Lambda Name Location Image](Assest/lambda_name.png)   
+
 
    
-   
+   <br>
+   <br>
 								   
 																																																								   
 																																						 
@@ -43,11 +57,11 @@ But if using out of the box CCP or workspace this is not an option.
 <h5>Instructions to schedule this Lambda function to run every X minutes:</h5>
 
 1. Search in the AWS Console for the services [Amazon EventBridge](https://aws.amazon.com/pm/eventbridge/)
-2.  Select EventBridge Schedule and click Create Schedule: ![EventBridge Image](Assest/EventBridge.PNG)
+2. Select EventBridge Schedule and click Create Schedule: ![EventBridge Image](Assest/EventBridge.PNG)
 3. Give the Schedule a name and Description. Under schedule pattern select Recurring Schedule. Select the Schedule type as Rate-based Schedule and set the Rate to something like 15 minutes. And set Flexible time window to *Off*
 4. This means the lambda will run and check for users with the DESK_PHONE settign every 15 minute. You can define how often you wish for this lambda to check.
 5. Give a date and time including timezone for when you want the lambda to fist kick off. Leave End date and time blank and click next
-6. Select Lambda from the list of templated targets
+6. Select Lambda from the list of templated targets, note the lambda name from step 16 in the previous section.
 7. Scroll down and from the Lambda function list, select the lambda you deployed previously. Don't worry about the payload and click Skip to Review and create schedule.
 9. Review and click Create Schedule.
 
