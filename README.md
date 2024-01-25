@@ -22,11 +22,11 @@ But if using out of the box CCP or workspace this is not an option.
 8. And then Choose file and select the [YAML file downloaded previously](index.py)  ![YAML Upload Image](Assest/YAML.png)
 9. Click Next
 10. Provide a stack name
-11. Fill out the parameters
-    	1. Connect Instance ID  [How to locate your Amazon COnnect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html)
-        2. RecieptEmail (Sender Recipient Email Address)
-        3. SenderEmail (Sender Email Address)
-        4. SolutionSourceBucket (bukcet name provided in Step 2 above)
+11. Fill out the parameters /
+    	1. Connect Instance ID  [How to locate your Amazon COnnect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) /
+        2. RecieptEmail (Sender Recipient Email Address) /
+        3. SenderEmail (Sender Email Address) /
+        4. SolutionSourceBucket (bukcet name provided in Step 2 above) /
 ![Stack Details Image](Assest/stackDetails.png)
 
    
