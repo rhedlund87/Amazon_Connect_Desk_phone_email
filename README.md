@@ -16,7 +16,20 @@ But if using out of the box CCP or workspace this is not an option.
 2. Provide a Unique name of the bucket then scroll down adn clikc Create bucket
 3. Download [index.py script](index.py)
 4. In the AWS console navigate to the service CLoudFormation
-5. Click Create stack in upper left hand corner:
+5. Click Create stack in upper left hand corner: ![CreateStack Image](Assest/createStack.png)
+6. Select “With new resources (standard)”
+7. Select Upload a Template
+8. And then Choose file and select the [YAML file downloaded previously](index.py)  ![YAML Upload Image](Assest/YAML.png)
+9. Click Next
+10. Provide a stack name
+11. Fill out the parameters
+    	1. Connect Instance ID  [How to locate your Amazon COnnect Instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html)
+        2. RecieptEmail (Sender Recipient Email Address)
+        3. SenderEmail (Sender Email Address)
+        4. SolutionSourceBucket (bukcet name provided in Step 2 above)
+![Stack Details Image](Assest/stackDetails.png)
+
+   
    
 								   
 																																																								   
