@@ -15,6 +15,8 @@ But if using out of the box CCP or workspace this is not an option.
 1. Login to the AWS console and navigate to the [S3 service](https://aws.amazon.com/s3/) and click Create bucket in the upper right hand corner
 2. Provide a Unique name of the bucket then scroll down adn clikc Create bucket
 3. Download [index.py script](index.py)
+4. In the AWS console navigate to the service CLoudFormation
+5. Click Create stack in upper left hand corner:
    
 								   
 																																																								   
