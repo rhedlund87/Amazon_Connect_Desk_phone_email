@@ -1,0 +1,59 @@
+C:\Users\riteshcy>node C:/Users/riteshcy/data/git/repolinter/bin/repolinter.js lint C:\Users\riteshcy\data\git\AWS-SAMPLES\Amazon_Connect_Desk_phone_email -r C:/Users/riteshcy/data/git/repo-linter-files/amazon-ospo-ruleset.json
+Target directory: C:\Users\riteshcy\data\git\AWS-SAMPLES\Amazon_Connect_Desk_phone_email
+Axiom language failed to run with error: Linguist not installed
+Axiom license failed to run with error: Licensee not installed
+Lint:
+√  binary-exec-lib: Did not find a file matching the specified patterns
+        √ **/*.jar
+        √ **/*.exe
+        √ **/*.dll
+        √ **/*.class
+        √ **/*.so
+        √ **/*.o
+        √ **/*.a
+√  binary-archive: Did not find a file matching the specified patterns
+        √ **/*.zip
+        √ **/*.tar
+        √ **/*.tar.gz
+        √ **/*.7z
+        √ **/*.iso
+        √ **/*.rpm
+        √ **/*.gz
+        √ **/*.rar
+        √ **/*.tgz
+√  binary-document: Did not find a file matching the specified patterns
+        √ **/*.pdf
+        √ **/*.doc
+        √ **/*.docx
+        √ **/*.xls
+        √ **/*.xlsx
+        √ **/*.ppt
+        √ **/*.pptx
+        √ **/*.odt
+√  amazon-logo: No file matching hash found
+‼  third-party-image: Found files
+        i PolicyUrl: https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Third-Party-Image
+        ‼ Assest/email_example.PNG
+        ‼ Assest/createStack.png
+        ‼ Assest/EventBridge.PNG
+        ‼ Assest/CF_ACK.png
+        ‼ Assest/YAML.png
+        ‼ Assest/lambda_name.png
+        ‼ Assest/stackDetails.png
+√  dataset: Did not find a file matching the specified patterns
+        √ **/*.csv
+        √ **/*.tsv
+√  dockerfile: Did not find a file matching the specified patterns (**/*docker*)
+√  dockerfile-download-statement: Did not find content matching specified patterns
+√  internal-url: Did not find content matching specified patterns
+√  prohibited-license: Did not find content matching specified patterns
+√  third-party-license-file: Did not find a file matching the specified patterns
+        √ **/LICENSE*
+        √ **/COPYING*
+        √ **/COPYRIGHT*
+        √ **/GPL*
+        √ **/THANK*
+        √ **/PATENT*
+‼  hidden-or-generated-file: Found files
+        i PolicyUrl: https://w.amazon.com/bin/view/Open_Source/Tools/Repolinter/Ruleset/Hidden-Generated-File (.git)
+√  large-file: No file larger than 500000 bytes found.
